@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarbonIQ - Calculator</title>
+
+    <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="stylesheet" href="Calculator.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+</head>
+<body>
+    <div class="navbar">
+      <a href="HomePage.html" class="logo-container">
+        <div class="logo-circle">
+          <img src="CarbonIQ logo.png" alt="CarbonIQ logo" />
+        </div>
+        <span class="logo-text">CarbonIQ</span>
+      </a>
+      <div class="navbar-links">
+        <a href="HomePage.html">Home</a>
+        <a href="Calculator.html" class="active">Calculator</a>
+        <a href="Info.html">Info</a>
+        <a href="Chat.html">Chat</a>
+      </div>
+      <a href="profile.html" class="profile-icon">
+        <img
+          id="headerProfilePic"
+          src="default-pic.png"
+          alt=""
+        />
+      </a>
+    </div>
+
+    <div class="calculator-area">
+        <h2 class="title">Vehicle Carbon Emission Calculator</h2>
+        <div class="form">
+            <form id="calc-form">
+                <div class="input">
+                    <label for="calcType">Calculation Type:</label>
+                    <select id="calcType" required>
+                        <option value="" disabled selected>Calculate with distance or the amount of fuel used</option>
+                        <option value="distance">Distance Driven</option>
+                        <option value="fuelUsed">Fuel Used</option>
+                    </select>
+                </div>
+
+                <div id="distance">
+                    <div class="input">
+                        <label for="jarak">Your Distance (KM):</label>
+                        <input type="number" step="any" id="jarak" placeholder="Input the amount you travel" required />
+                    </div>
+                    <div class="input">
+                        <label for="efisiensi">Fuel Type:</label>
+                        <select id="efisiensi" required>
+                            <option class="placeholder" disabled selected>Select the fuel of your vehicle</option>
+                            <option value="bensin">Pertalite / Pertamax / Pertamax turbo</option>
+                            <option value="maxGreen">Pertamax Green</option>
+                            <option value="diesel">Solar / Diesel</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="fuel" style="display: none;">
+                    <div class="input">
+                        <label for="fuelAmount">Amount Used (Liters):</label>
+                        <input type="number" step="any" id="fuelAmount" required />
+                    </div>
+                </div>
+
+                <div class="input">
+                    <label for="vehicle">Your Vehicle:</label>
+                    <select id="vehicle" required>
+                        <option value="" disabled selected>Select the vehicle used</option>
+                        <option value= "bebek">Underbone / automatic motorcycle</option>
+                        <option value="sport">Sport bike / 250cc motorcycle</option>
+                        <option value="lcgc">LCGC car</option>
+                        <option value="family">Family car (MPV)</option>
+                        <option value="suv">SUV</option>
+                        <option value="pickup">Pickup truck</option>
+                        <option value="light">Light truck</option>
+                        <option value="medium">Medium truck (6 wheels)</option>
+                        <option value="large">Large truck (10+ wheels)</option>
+                        <option value="tour">Tour bus</option>
+                        <option value="city">City bus</option>
+                    </select>
+                </div>
+
+                <div class="buton">
+                    <button type="submit" class="buton-submit">Calculate</button>
+                </div>
+            </form>
+        </div>
+        <div id="result" class="result-box"></div>
+    </div>
+
+    <script src="Calculator.js"></script>
+</body>
+</html>
