@@ -1,5 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #e7e7e7;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("Background.webp");
+  background-size: cover;
+  opacity: 0.5;
+  z-index: -1;
+}
+
 .container {
   padding: 0;
   background-color: transparent;
@@ -53,7 +78,7 @@
 .btn-submit {
   width: 100%;
   padding: 15px;
-  background-color: #ffc107;
+  background-color: #08b765a8;
   color: rgb(255, 250, 250);
   border: none;
   border-radius: 5px;
@@ -66,5 +91,21 @@
 }
 
 .btn-submit:hover {
-  background-color: #fdbc09;
+  background-color: #08b765a8;
+}
+
+.error-message {
+  color: #d32f2f;
+  font-size: 0.9em;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #ffebee;
+  border-radius: 5px;
+  display: none;
+  text-align: center;
+  font-weight: 500;
+}
+
+.error-message.show {
+  display: block;
 }
