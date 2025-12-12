@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+.container {
+  padding: 0;
+  background-color: transparent;
+}
+
+.logo-circle {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 20px auto;
+}
+
+.form-section {
+  background-color: #ffffffd9;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px #00000026;
+  width: 350px;
+  margin-top: 30px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.form-section h2 {
+  color: #333333;
+  margin-bottom: 30px;
+  font-size: 1.5em;
+  font-weight: normal;
+  font-family: "Poppins", sans-serif;
+}
+
+.input-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.input-group input {
+  width: calc(100% - 20px);
+  padding: 12px 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 1em;
+  font-family: "Poppins", sans-serif;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #ffffff;
+  box-shadow: 0 0 5px #08deff80;
+}
+
+.btn-submit {
+  width: 100%;
+  padding: 15px;
+  background-color: #ffc107;
+  color: rgb(255, 250, 250);
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px #00000033;
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.btn-submit:hover {
+  background-color: #fdbc09;
+}

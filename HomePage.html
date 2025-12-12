@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CareerX - Home Page</title>
+
+    <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="dasborth.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+  </head>
+
+  <body>
+    <div class="navbar">
+      <div class="logo-circle">
+        <img src="CarbonIQ logo.png" alt="CarbonIQ logo" />
+      </div>
+      <div class="navbar-links">
+        <a href="HomePage.html" class="active">Home</a>
+        <a href="Calculator.html">Calculator</a>
+        <a href="Info.html">Info</a>
+        <a href="Chat.html">Chat</a>
+      </div>
+      <a href="profile.html" class="profile-icon">
+        <img
+          id="headerProfilePic"
+          src="default-pic.png"
+          alt="Profile Picture"
+        />
+      </a>
+    </div>
+
+    <div class="dashboard-main-content">
+      <div class="sidebar">
+        <a href="Calculator.html" class="sidebar-item">Calculator</a>
+        <a href="Info.html" class="sidebar-item">Info</a>
+        <a href="Chat.html" class="sidebar-item">Chat</a>
+      </div>
+
+      <div class="main-dashboard-area">
+        <div class="speech-bubble">
+          Welcome, <span id="welcomeUsername">User</span>, any ideas today?
+        </div>
+
+        <div class="welcome-box">
+          "Welcome to <em>CarbonIQ</em>, your smart assistant for monitoring and reducing yout vehicle's emissions. 
+          Understand yout carbon footprint, improce efficiency, adn be part of the change towards a cleaner planet. "
+        </div>
+      </div>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>

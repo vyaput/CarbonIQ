@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CareerX - Sign In</title>
+    <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="form.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo-circle">
+        <img src="CarbonIQ logo.png" alt="CarbonIQ logo" />
+      </div>
+      <div class="form-section">
+        <h2>Sign in to join</h2>
+        <form id="loginForm" action="Home_page.html" method="get">
+          <div class="input-group">
+            <input type="email" id="loginEmail" placeholder="Email" required />
+          </div>
+          <div class="input-group">
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <button type="submit" class="btn-submit">Sign in</button>
+        </form>
+
+        <div class="link-text">
+          Don't have an account yet? <a href="signup.html">Sign up</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="auth.js"></script>
+  </body>
+</html>

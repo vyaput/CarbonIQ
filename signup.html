@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CareerX - Sign Up</title>
+    <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="form.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo-circle">
+        <img src="CarbonIQ logo.png" alt="CarbonIQ logo" />
+      </div>
+      <div class="form-section">
+        <h2>Sign Up To Begin Exploring</h2>
+        <form id="signupForm" action="HomePage.html" method="get">
+          <div class="input-group">
+            <input
+              type="text"
+              id="signupUsername"
+              placeholder="Username"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <input type="email" id="signupEmail" placeholder="Email" required />
+          </div>
+          <div class="input-group">
+            <input
+              type="password"
+              id="signupPassword"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <input
+              type="url"
+              id="signupLinkedin"
+              placeholder="LinkedIn Link (Optional)"
+            />
+          </div>
+          <button type="submit" class="btn-submit">Sign Up</button>
+        </form>
+        <div class="link-text">
+          Already have an account? <a href="login.html">Sign in</a>
+        </div>
+      </div>
+    </div>
+    <script src="auth.js"></script>
+  </body>
+</html>
