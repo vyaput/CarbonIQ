@@ -1,0 +1,20 @@
+{
+  "name": "ai-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google/genai": "^0.x.x",
+    "cors": "^2.x.x",
+    "dotenv": "^16.x.x",
+    "express": "^4.x.x",
+    "marked": "^17.0.1"
+  }
+}

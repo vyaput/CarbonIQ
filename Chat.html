@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CarbonIQ - Chatbot</title>
+
+    <link rel="stylesheet" href="common.css" />
+    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="stylesheet" href="chatbot.css" />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+        rel="stylesheet"
+    />
+</head>
+<body>
+    <div class="navbar">
+      <a href="HomePage.html" class="logo-container">
+        <div class="logo-circle">
+          <img src="CarbonIQ logo.png" alt="CarbonIQ logo" />
+        </div>
+        <span class="logo-text">CarbonIQ</span>
+      </a>
+      <div class="navbar-links">
+        <a href="HomePage.html">Home</a>
+        <a href="Calculator.html">Calculator</a>
+        <a href="Info.html">Info</a>
+        <a href="Chat.html" class="active">Chat</a>
+      </div>
+      <a href="profile.html" class="profile-icon">
+        <img
+          id="headerProfilePic"
+          src="default-pic.png"
+          alt=""
+        />
+      </a>
+    </div>
+
+    <div class="chatbot-page-container">
+        <div class="chatbot-header-full">
+            <h3>CarbonIQ ChatBot (Powered by Gemini)</h3>
+        </div>
+
+        <div id="chat-history" class="chat-history-full">
+            <div class="message gemini-message">
+                Halo! Saya ChatBot+ asisten CarbonIQ Anda. Tanyakan tentang emisi kendaraan, pengurangan jejak karbon, atau efisiensi!
+        </div>
+    </div>
+
+    <div class="chat-input-area-full">
+        <textarea type="text" id="user-input" placeholder="Ketik pesan Anda..."></textarea>
+        <button id="send-button">Kirim</button>
+    </div>
+    <script src="chatbot.js"></script>
+</body>
+</html>
