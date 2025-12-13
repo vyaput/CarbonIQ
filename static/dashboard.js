@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
             headerProfilePic.src = picSrc;
 
             headerProfilePic.onerror = () => {
-                headerProfilePic.src = 'default-pic.png';
+                headerProfilePic.src = '/static/default-pic.png';
             };
         }
     } 
