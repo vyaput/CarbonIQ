@@ -17,7 +17,6 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-
   </head>
 
   <body>
@@ -31,29 +30,74 @@
       <div class="navbar-links">
         <a href="HomePage.html" class="active">Home</a>
         <a href="Calculator.html">Calculator</a>
-        <a href="Info.html">Info</a>
         <a href="Chat.html">Chat</a>
       </div>
       <a href="profile.html" class="profile-icon">
         <img
           id="headerProfilePic"
           src="/static/default-pic.png"
-          alt=""
+          alt="Profile"
         />
       </a>
     </div>
 
     <div class="dashboard-main-content">
       <div class="main-dashboard-area">
-        <div class="speech-bubble">
-          Welcome, <span id="welcomeUsername">User</span>, any ideas today?
-        </div>
-
+        
+        <h1 class="welcome-title">Welcome to CarbonIQ</h1>
+        
         <div class="welcome-box">
-          "Welcome to <em>CarbonIQ</em>, your smart assistant for monitoring and reducing yout vehicle's emissions. 
-          Understand yout carbon footprint, improce efficiency, adn be part of the change towards a cleaner planet. "
+          Your smart assistant for monitoring and reducing your vehicle's emissions. 
+          Understand your carbon footprint, improve efficiency, and be part of the change towards a cleaner planet.
         </div>
+        
+        <section class="features-section">
+          <h2>Monitor Emisi, Kurangi Dampaknya</h2>
+          <div class="feature-list">
+            <div class="feature-item">
+              <i class="fas fa-chart-line"></i>
+              <h3>Monitoring Real-Time</h3>
+              <p>Lacak jejak karbon kendaraan Anda secara akurat saat Anda mengemudi.</p>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-lightbulb"></i>
+              <h3>Saran Efisiensi</h3>
+              <p>Dapatkan tips yang dipersonalisasi untuk gaya mengemudi yang lebih hemat bahan bakar.</p>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-leaf"></i>
+              <h3>Kalkulasi Jejak Karbon</h3>
+              <p>Hitung total emisi Anda dan tetapkan target pengurangan pribadi.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="cta-section">
+          <h2>Siap Menjadi Lebih Hijau?</h2>
+          <div class="steps-container">
+            <div class="step-item">
+              <span class="step-number">1</span>
+              <h3>Daftar & Hubungkan</h3>
+              <p>Buat akun Anda atau Masuk dan siapkan data kendaraan Anda.</p>
+            </div>
+            <div class="step-item">
+              <span class="step-number">2</span>
+              <h3>Analisis</h3>
+              <p>Gunakan Kalkulator kami atau mulai monitoring untuk melihat emisi Anda.</p>
+            </div>
+            <div class="step-item">
+              <span class="step-number">3</span>
+              <h3>Bertindak</h3>
+              <p>Terapkan saran kami dan saksikan dampak positif Anda pada planet.</p>
+            </div>
+          </div>
+          <a href="Calculator.html" class="btn cta-button">
+            Mulai Hitung Jejak Karbon Anda
+          </a>
+        </section>
+
       </div>
+    </div>
 
     <script src="/static/dashboard.js"></script>
   </body>
