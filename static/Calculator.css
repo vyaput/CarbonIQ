@@ -93,13 +93,15 @@ body{
 .buton{
     margin-top: 20px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     background-color: transparent;
+    gap: 10px;
 }
 
 .buton-submit {
     padding: 15px 20px;
-    background-color: #08b765a8;
+    background-color: #06a85a;
     color: white;
     border: none;
     border-radius: 5px;
@@ -110,10 +112,88 @@ body{
 }
 
 .buton-submit:hover {
-    background-color: #06a85a;
+    background-color: #08b765a8;
+}
+
+.buton-reset{
+    padding: 15px 20px;
+    background-color: #e20000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buton-reset:hover {
+    background-color: #ff4a4a;
+}
+
+.preview{
+    font-family: "Century";
+    font-size: 25px;
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.result-container{
+    width: 500px;
+    margin-top: 10px;
+}
+
+.result-container h3{
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 30px;
+}
+
+.result-container ul{
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    list-style: none;
+    box-shadow: 0px 2px 4px black;
+    font-size: 23px;
+    max-height: 300px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.result-container ul li{
+    padding: 10px 0;
+    border-bottom: 1px solid #adadad;
+}
+
+.analyze-section {
+    text-align: center;
+    margin-top: 15px;
 }
 
 .result-box {
-    
+    align-items: center;
+    text-align: center;
+    font-family: 'Poppins';
+}
+
+.result-box div{
+    background: #7acf77;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+.result-box h3{
+    margin-top: 0;
+    font-family: "Century";
+    font-size: 30px;
+}
+
+.result-box p{
+    font-family: 'Poppins';
+    font-size: 20px;
 }
 

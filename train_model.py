@@ -3,14 +3,11 @@ from sklearn.linear_model import LinearRegression
 import joblib
 
 data = {
-    'jenis_kendaraan': [
-        'bebek', 'sport', 'lcgc', 'family', 'suv', 'pickup', 'light', 'medium', 'large', 'tour', 'city'
-    ],
     'estimasi_cc': [
-        110, 250, 1200, 1500, 2500, 1500, 4000, 6000, 10000, 12000, 8000
+        110, 250, 1200, 1500, 2500, 1500, 4000, 6000, 8000, 10000, 12000
     ],
     'emisi_co2_perkm': [
-        40, 80, 120, 150, 200, 160, 300, 500, 800, 900, 600
+        40, 80, 120, 150, 200, 160, 300, 500, 600, 800, 900,
     ]
 }
 

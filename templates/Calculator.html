@@ -21,19 +21,18 @@
 </head>
 <body>
     <div class="navbar">
-      <a href="HomePage.html" class="logo-container">
+      <a href="/" class="logo-container">
         <div class="logo-circle">
           <img src="/static/CarbonIQ logo.png" alt="CarbonIQ logo" />
         </div>
         <span class="logo-text">CarbonIQ</span>
       </a>
       <div class="navbar-links">
-        <a href="HomePage.html">Home</a>
-        <a href="Calculator.html" class="active">Calculator</a>
-        <a href="Info.html">Info</a>
-        <a href="Chat.html">Chat</a>
+        <a href="/">Home</a>
+        <a href="/calculator_page" class="active">Calculator</a>
+        <a href="/chat">Chat</a>
       </div>
-      <a href="profile.html" class="profile-icon">
+      <a href="/profile" class="profile-icon">
         <img
           id="headerProfilePic"
           src="/static/default-pic.png"
@@ -57,12 +56,12 @@
 
                 <div id="distance">
                     <div class="input">
-                        <label for="jarak">Your Distance (KM):</label>
-                        <input type="number" step="any" id="jarak" placeholder="Input the amount you travel" required />
+                        <label for="jarak">Distance (KM):</label>
+                        <input type="number" step="any" id="jarak" placeholder="Input the amount you travel"/>
                     </div>
                     <div class="input">
                         <label for="efisiensi">Fuel Type:</label>
-                        <select id="efisiensi" required>
+                        <select id="efisiensi">
                             <option class="placeholder" disabled selected>Select the fuel of your vehicle</option>
                             <option value="bensin">Pertalite / Pertamax / Pertamax turbo</option>
                             <option value="maxGreen">Pertamax Green</option>
@@ -74,7 +73,7 @@
                 <div id="fuel" style="display: none;">
                     <div class="input">
                         <label for="fuelAmount">Amount Used (Liters):</label>
-                        <input type="number" step="any" id="fuelAmount" required />
+                        <input type="number" step="any" id="fuelAmount" />
                     </div>
                 </div>
 
@@ -97,12 +96,28 @@
                 </div>
 
                 <div class="buton">
-                    <button type="submit" class="buton-submit">Calculate</button>
+                    <button type="button" id="calculate-btn" class="buton-submit">Calculate</button>
+                    <button type="button" id="save-btn" class="buton-submit">Save entry</button>
                 </div>
             </form>
+            
+            <div id="preview-result" class="preview"></div>
         </div>
+
+        <div id="list-container" class="result-container">
+            <h3>Your Daily Entries</h3>
+            <ul id="day-list">
+                <li>No days added yet.</li>
+            </ul>
+            
+            <div class="analyze-section">
+                <button type="button" id="analyze-btn" class="buton-submit">Analyze your emissions</button>
+                <button type="button" id="reset-btn" class="buton-reset">Reset</button>
+            </div>
+        </div>
+
         <div id="result" class="result-box"></div>
-    </div>
+  </div>
 
     <script src="/static/Calculator.js"></script>
     <script src="/static/dashboard.js"></script>

@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const username = document.getElementById('signupUsername').value;
             const email = document.getElementById('signupEmail').value;
             const password = document.getElementById('signupPassword').value;
-            const linkedin = document.getElementById('signupLinkedin').value;
 
             if (!username || !email || !password) {
                 alert('Please fill in all required fields.');
@@ -15,25 +14,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             let userProfile = {
-                profilePicture: 'default-pic.png',
+                profilePicture: '/static/default-pic.png',
                 username: username,
                 fullName: username, 
                 email: email,
                 password: password,
-                linkedin: linkedin,
-                schoolHistory: {
-                    college: '',
-                    highschool: ''
-                },
-                lastWorkPosition: '',
-                lastWorkExperience: '',
-                skills: '',
-                achievements: ''
             };
 
             localStorage.setItem('userProfile', JSON.stringify(userProfile));
             localStorage.setItem('currentUserEmail', email);
-            window.location.href = 'HomePage.html';
+            window.location.href = '/';
         });
     }
 
@@ -53,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (userProfile.email === email.value && userProfile.password === password.value) {
                     localStorage.setItem('currentUserEmail', email.value);
-                    window.location.href = 'HomePage.html';
+                    window.location.href = '/';
                 } else {
                     email.value = '';
                     password.value = '';
