@@ -21,14 +21,14 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   box-shadow: 0 2px 4px #00000033;
-  background-color: #ffc107;
+  background-color: #08b765a8;
   color: white;
   text-decoration: none;
   font-weight: 600;
 }
 
 .btn:hover {
-  background-color: #e0a800;
+  background-color: #05d172ce;
 }
 
 .link-text {

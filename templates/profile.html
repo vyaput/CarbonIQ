@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarbonIQ - User Profile</title>
+    <link rel="stylesheet" href="/static/common.css">
+    <link rel="stylesheet" href="/static/dashboard.css">
+    <link rel="stylesheet" href="/static/profile.css">
+</head>
+<body>
+    <div class="navbar">
+      <a href="/" class="logo-container">
+        <div class="logo-circle">
+          <img src="/static/CarbonIQ logo.png" alt="CarbonIQ logo" />
+        </div>
+        <span class="logo-text">CarbonIQ</span>
+      </a>
+      <div class="navbar-links">
+        <a href="/">Home</a>
+        <a href="/calculator_page">Calculator</a>
+        <a href="/chat">Chat</a>
+      </div>
+      <a href="/profile" class="profile-icon">
+        <img
+          id="headerProfilePic"
+          src="/static/default-pic.png"
+          alt="Profile"
+        />
+      </a>
+    </div>
+
+    <main class="container-profile">
+        <h1 class="page-title">Profile</h1>
+
+        <div class="profile-section">
+            <div class="profile-header">
+                <div class="profile-picture-wrapper">
+                    <img id="profilePictureDisplay" class="profile-picture" src="image/default-pic.png" alt="Profile Picture">
+                    <input type="file" id="profilePictureInput" accept="image/*" style="display: none;">
+                    <button id="uploadPicBtn" class="upload-pic-btn" style="display: none;">Upload Picture</button>
+                </div>
+                <div class="profile-info-text">
+                    <h2 id="profileFullNameDisplay"></h2>
+                    <p id="profileUsernameDisplay"></p>
+                </div>
+            </div>
+
+            <form id="profileForm" class="profile-form">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" class="form-input" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" class="form-input" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" class="form-input" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" class="form-input" value="********" readonly>
+                    <button type="button" id="changePasswordBtn" class="change-password-btn" style="display: none;">Change Password</button>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" id="editProfileBtn" class="action-button save-button">Edit Profile</button>
+                    <button type="submit" id="saveProfileBtn" class="action-button save-button" style="display: none;">Save Changes</button>
+                    <button type="button" id="cancelEditBtn" class="action-button cancel-button" style="display: none;">Cancel</button>
+                    <button type="button" id="logoutBtn" class="action-button logout-button">Logout</button> </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    <div class="history">
+        <h2>Your Vehicle Carbon Footprint</h2>
+
+        <div id="list" class="result-container">
+            <ul id="day-list">
+                <li>No days added yet.</li>
+            </ul>               
+            <div class="analyze">
+                <button type="button" id="analyze-btn" class="action-button analyze-btn">Analyze</button>
+                <button type="button" id="reset-btn" class="action-button reset-btn">Reset</button>
+            </div>
+        </div>
+
+        <div id="result" class="result-box"></div>
+    </div>
+
+    <script src="/static/dashboard.js"></script>
+    <script src="/static/profile.js"></script>
+</body>
+</html>

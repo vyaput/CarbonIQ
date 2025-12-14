@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 resultDiv.innerHTML = `
                     <div>
                         <h3>Carbon Emission Trend</h3>
-                        <p style="font-size: 1.1em;"><strong>Total Emission:</strong> ${data.total_kg} kg CO2</p>
+                        <p style="font-size: 1.5em;"><strong>Total Emission:</strong> ${data.total_kg} kg CO2</p>
                         ${imgHtml}
                     </div>
                 `;

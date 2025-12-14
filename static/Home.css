@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 
+*{
+    box-sizing: border-box;
+}
+
 body {
     display: block;
     min-height: 100vh;
@@ -36,14 +40,14 @@ body::before {
 
 .main-dashboard-area {
     flex-grow: 1;
-    padding: 30px 50px;
+    max-width: 100%;
+    padding: 30px 0px;
     background-color: transparent;
     display: flex;
     flex-direction: column;
     gap: 15px; 
     box-sizing: border-box;
-    max-width: 1100px; 
-    margin: 0 auto;
+    margin: 0;
     position: relative;
     padding-top: 50px; 
 }
@@ -51,16 +55,11 @@ body::before {
 .welcome-title {
     position: relative;
     margin-top: 0;
-    max-width: 600px; 
-    
-    font-size: 3.8em; 
-    font-weight: 700;
-    color: #000000; 
-    text-align: left;
-
-	
-    
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    font-size: 100px; 
+    color: #04a111; 
+    text-align: center;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
+    -webkit-text-stroke: 0.5px black;
     z-index: 20; 
     margin-bottom: 5px; 
 }
@@ -69,21 +68,16 @@ body::before {
 .welcome-box {
     background-color: rgba(255, 255, 255, 0.9);
     box-shadow: 0 5px 15px #0000001a;
-    
     position: relative; 
-    margin-top: 0; 
-    
-    width: 100%;
-    
-    padding: 20px 30px; 
+    width: 85%;
+    margin: 0 auto;
+    padding: 20px 0px; 
     border-radius: 10px;
-    
-    font-size: 1.1em; 
+    font-size: 30px; 
     line-height: 1.6;
     color: #555555; 
-    text-align: left;
+    text-align: center;
     font-family: "Poppins", sans-serif;
-    
     text-shadow: none;
     z-index: 20;
 }
@@ -97,7 +91,8 @@ body::before {
 
 .features-section {
     width: 100%; 
-    padding: 60px 30px;
+    height: 600px;
+    padding: 20px 50px;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.95);
     border-radius: 10px;
@@ -109,7 +104,7 @@ body::before {
     color: #18bd02; 
     margin-bottom: 40px;
     font-weight: 700;
-    font-size: 2em;
+    font-size: 60px;
 }
 
 .feature-list {
@@ -131,7 +126,7 @@ body::before {
 }
 
 .feature-item i {
-    font-size: 3.5em; 
+    font-size: 90px; 
     color: #ffc107; 
     margin-bottom: 15px;
 }
@@ -140,26 +135,30 @@ body::before {
     color: #333;
     margin-bottom: 10px;
     font-weight: 600;
+    font-size: 40px;
 }
 
 .feature-item p {
     color: #555555;
-    font-size: 1em;
+    font-size: 30px;
 }
 
 .cta-section {
     width: 100%;
     text-align: center;
-    padding: 50px 30px;
-    background-color: rgba(25, 189, 2, 0.08); 
+    padding: 20px 0px;
+    padding-bottom: 50px;
+    background-color: rgba(67, 229, 45, 0.4); 
     border-radius: 10px;
     border: 1px solid rgba(25, 189, 2, 0.3);
+    font-family:'Times New Roman', Times, serif;
 }
 
 .cta-section h2 {
     color: #333;
     margin-bottom: 40px;
     font-weight: 700;
+    font-size: 60px;
 }
 
 .steps-container {
@@ -170,9 +169,10 @@ body::before {
 }
 
 .step-item {
-    max-width: 200px;
+    max-width: 500px;
     text-align: center;
     position: relative;
+    font-size: 30px
 }
 
 .step-item:not(:last-child)::after {
@@ -181,25 +181,27 @@ body::before {
     top: 25px;
     right: -45px; 
     color: #18bd02;
-    font-size: 1.5em;
+    font-size: 3em;
 }
 
 .step-number {
     display: inline-block;
-    width: 50px; 
-    height: 50px;
+    align-items: center;
+    justify-content: center;
+    width: 80px; 
+    height: 80px;
     line-height: 50px;
     background-color: #18bd02; 
     color: white;
     border-radius: 50%;
     font-weight: 700;
     margin-bottom: 15px;
+    padding-top: 15px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-    font-size: 1.5em;
+    font-size: 2em;
 }
 
 .cta-button {
-    padding: 20px 60px; 
     font-size: 1.4em;
     margin-top: 20px;
 }
