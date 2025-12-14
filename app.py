@@ -7,6 +7,7 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 import io
 import base64
+from sklearn.linear_model import LinearRegression
 
 app = Flask (__name__, static_folder='static', template_folder='templates')
 CORS(app)
@@ -21,10 +22,6 @@ map_kendaraan_cc = {
     'bebek': 110, 'sport': 250, 'lcgc': 1200, 'family': 1500, 'suv': 2500, 'pickup': 1500, 'light': 4000, 'medium': 6000, 'large': 10000, 'tour': 12000, 'city': 8000
 }
 
-map_bbm_emisi = {
-    'bensin': 2310, 'green': 2100, 'diesel': 2600
-}
-
 @app.route("/")
 def home():
     return render_template("HomePage.html")
@@ -33,69 +30,82 @@ def home():
 def calculator_page():
     return render_template("Calculator.html")
 
-@app.route("/calculate", methods=["POST"])
-def calculate():
+@app.route("/chat")
+def chat_page():
+    return render_template("Chat.html")
+
+@app.route("/profile")
+def profile():
+    return render_template("profile.html")
+
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
+@app.route("/signup")
+def signup():
+    return render_template("signup.html")
+
+@app.route("/predict_emission", methods=["POST"])
+def predict_emission():
     data = request.json
+    vehicle = data.get('vehicle', 'family')
 
     print("DATA RECEIVED FROM FRONTEND:", data)
 
-    tipe_hitung = data.get('calcType')
-    kendaraan = data.get('vehicle')
-    bbm = data.get('efisiensi')
-
-    total_emisi = 0
-    pesan = ""
-    plot_url = None
-
-    cc_input = map_kendaraan_cc.get(kendaraan, 1500)
+    cc_input = map_kendaraan_cc.get(vehicle, 1500)
 
     if model:
-        prediksi_perkm = model.predict([[cc_input]])[0]
+        emission_factor = model.predict([[cc_input]])[0]
     else:
-        prediksi_perkm = 0
+        emission_factor = 150
+        
+    return jsonify({
+        "success": True, 
+        "emission_factor": float(emission_factor)
+    })
 
-    if tipe_hitung == 'distance':
-        jarak = float(data.get('jarak', 0))
-        total_emisi = prediksi_perkm * jarak
-        pesan = f"Estimated emission for travelling {jarak} km using {kendaraan}."
+@app.route("/analyze_trend", methods=["POST"])
+def analyze_trend():
+    data = request.json
+    emissions_list = data.get('daily_data', [])
 
-    elif tipe_hitung == 'fuelUsed':
-        liter = float(data.get('fuelAmount', 0))
-        faktor_bbm = 2310
+    if not emissions_list or len(emissions_list) < 2:
+        return jsonify({"success": False, "message": "Need at least 2 days."})
 
-        if bbm == 'green':
-            faktor_bbm = 2100
-        elif bbm == 'diesel':
-            faktor_bbm = 2600
+    # Prepare Data: X = Days, Y = Emissions
+    day_count = len(emissions_list)
+    days = np.array(range(1, len(emissions_list) + 1)).reshape(-1, 1)
+    emissions = np.array(emissions_list).reshape(-1, 1)
 
-        total_emisi = liter * faktor_bbm
-        pesan = f"Estimated emission from burning {liter} liter of fuel."
+    # Train temporary model for Trend
+    trend_model = LinearRegression()
+    trend_model.fit(days, emissions)
+    trend_line = trend_model.predict(days)
+
+    future_days = np.array(range(day_count, day_count + 6)).reshape(-1, 1)
+    future_forecast = trend_model.predict(future_days)
     
+    # Generate Plot
     plt.clf()
-
-    x_range = np.array([[100], [12000]])
-    y_range = model.predict(x_range)
-    plt.plot (x_range, y_range, color='blue', linewidth = 2, label = 'Regression Line')
-
-    plt.scatter([[cc_input]], [[prediksi_perkm]], color = 'red', s = 100, label = 'Your vehicle', zorder = 5)
-
-    plt.xlabel('Engine Size (CC)')
-    plt.ylabel('Emision (g/km)')
-    plt.title(f'Emission Position {kendaraan.upper()}')
+    plt.figure(figsize=(10, 6))
+    plt.plot(days, trend_line, color='blue', linewidth=3, label='Trend Line')
+    plt.scatter(days, emissions, color='red', s=100, zorder=5, label='Actual Data')
+    plt.plot(future_days, future_forecast, color='blue', linestyle='--', linewidth=3, label='7-Day Forecast')
+    plt.xlabel('Day')
+    plt.ylabel('Emission (kg)')
+    plt.title('Daily Emission Trend')
     plt.legend()
-    plt.grid(True, alpha = 0.3)
+    plt.grid(True, alpha=0.3)
 
     img = io.BytesIO()
-    plt.savefig(img, format = 'png', bbox_inches = 'tight')
+    plt.savefig(img, format='png', bbox_inches='tight')
     img.seek(0)
-
     plot_url = base64.b64encode(img.getvalue()).decode()
 
     return jsonify({
         "success": True,
-        "total_emisi_gram": round(total_emisi, 2),
-        "total_emisi_kg": round(total_emisi / 1000, 2),
-        "message": pesan,
+        "total_kg": round(sum(emissions_list), 2),
         "plot_image": plot_url
     })
 

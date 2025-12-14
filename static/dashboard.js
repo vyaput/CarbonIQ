@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         const profileLink = document.querySelector('.profile-icon');
         if (profileLink) {
-            profileLink.href = 'login.html';
+            profileLink.href = '/login';
             profileLink.classList.add('no_account');
             profileLink.textContent = 'Sign In';
         }
