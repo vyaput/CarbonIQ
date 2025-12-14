@@ -4,7 +4,7 @@ body{
 .chatbot-page-container {
     display: flex;
     flex-direction: column;
-    height: 990px; /* Sesuaikan tinggi */
+    height: 990px;
     width: 90%;
     max-width: 800px;
     margin: 40px auto; 
